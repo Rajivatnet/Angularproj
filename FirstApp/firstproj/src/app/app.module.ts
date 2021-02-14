@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import{MatDialogModule} from '@angular/material/dialog';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -20,6 +21,8 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import {DishService} from './service/dish.service';
 import {PromotionService} from './service/promotion.service';
+import {LeaderService} from './service/leader.service';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,8 @@ import {PromotionService} from './service/promotion.service';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
     
   ],
   imports: [
@@ -41,10 +45,13 @@ import {PromotionService} from './service/promotion.service';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
     
   ],
-  providers: [DishService,PromotionService],
+
+  providers: [DishService,PromotionService,LeaderService],
+  entryComponents:[LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
